@@ -14,6 +14,7 @@ type Alternative = {
   natural_meaning: string;
   nuance: string;
   context: string;
+  literal_translation: string;
 };
 
 const roleLabels: Record<Alternative["role"], string> = {
@@ -86,6 +87,8 @@ export default function Home() {
 
   const isSameLanguage = inputLanguage === targetLanguage;
   const targetName = targetLanguage === "ja" ? "Japanese" : "Korean";
+  const literalLanguage: Language = alternativesLanguage === "ja" ? "ko" : "ja";
+  const literalLabel = literalLanguage === "ja" ? "Literal Japanese" : "Literal Korean";
 
   useEffect(() => () => {
     audioRef.current?.pause();
@@ -302,6 +305,12 @@ export default function Home() {
                       <div className="alternative-copy">
                         <span className={`role-badge ${alternative.role}`}>{roleLabels[alternative.role]}</span>
                         <p className="alternative-expression" lang={alternativesLanguage}>{alternative.expression}</p>
+                        {alternative.literal_translation && (
+                          <>
+                            <span className="alternative-literal-label">{literalLabel}</span>
+                            <p className="alternative-literal" lang={literalLanguage}>{alternative.literal_translation}</p>
+                          </>
+                        )}
                         <p className="alternative-explanation">{alternative.natural_meaning} {alternative.nuance}</p>
                       </div>
                       <div className="alternative-actions">

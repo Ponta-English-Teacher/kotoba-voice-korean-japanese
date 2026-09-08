@@ -125,7 +125,9 @@ fieldset { min-width: 0; margin: 22px 0 0; padding: 0; border: 0; }
 .role-badge.natural { color: #467452; background: #e8f3ea; }
 .role-badge.nuanced { color: #8a5b39; background: #f7ecdf; }
 .alternative-expression { margin: 15px 0 10px; font-size: clamp(28px, 4vw, 36px); font-weight: 780; line-height: 1.3; letter-spacing: -.025em; }
-.alternative-explanation { max-width: 590px; margin: 0; color: #53616a; font-size: 16px; line-height: 1.6; }
+.alternative-literal-label { display: block; margin: 4px 0 5px; font-size: 11px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; color: #7c9391; }
+.alternative-literal { max-width: 590px; margin: 0; color: #3f4d54; font-size: 18px; font-weight: 560; line-height: 1.55; }
+.alternative-explanation { max-width: 590px; margin: 12px 0 0; color: #53616a; font-size: 16px; line-height: 1.6; }
 .alternative-actions { display: grid; gap: 9px; }
 .alternative-actions button { min-height: 48px; border-radius: 13px; cursor: pointer; font-size: 14px; font-weight: 850; }
 .alternative-actions button:disabled { cursor: not-allowed; opacity: .55; }
