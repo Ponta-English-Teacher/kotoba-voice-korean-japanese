@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kotoba Voice — Japanese × Korean 利用マニュアル</title>
+<style>
+  :root {
+    --ink: #1d2935;
+    --muted: #5b6a72;
+    --line: #dce4e7;
+    --paper: #fffefa;
+    --accent: #df674f;
+    --teal: #2d7774;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f6f4ed;
+    color: var(--ink);
+    font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", "Avenir Next", sans-serif;
+    line-height: 1.8;
+  }
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 28px 80px;
+  }
+  h1 {
+    font-size: 26px;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0 0 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 52px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--teal);
+    color: var(--teal);
+    letter-spacing: -0.01em;
+  }
+  h2::before {
+    content: attr(data-num) "　";
+    color: var(--accent);
+    font-weight: 800;
+  }
+  p { margin: 0 0 14px; font-size: 15.5px; }
+  ul, ol { margin: 0 0 16px; padding-left: 1.4em; }
+  li { margin-bottom: 6px; font-size: 15.5px; }
+  blockquote {
+    margin: 12px 0 16px;
+    padding: 10px 18px;
+    background: #fbfcfa;
+    border-left: 4px solid var(--teal);
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  figure {
+    margin: 20px 0 28px;
+    padding: 12px;
+    background: var(--paper);
+    border: 1px solid rgba(0,0,0,.06);
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(57,68,71,.08);
+  }
+  figure img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+  }
+  figcaption {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    padding: 0 4px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 20px;
+    font-size: 14.5px;
+    background: var(--paper);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  th {
+    background: #eef1ef;
+    color: #3a4a4d;
+    font-weight: 700;
+  }
+  tr:last-child td { border-bottom: 0; }
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 40px 0;
+  }
+  .summary-box {
+    background: #f0f6f0;
+    border: 1px solid #d7e7de;
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin-top: 24px;
+  }
+  .summary-box h2 {
+    border: none;
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+  .footer-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12.5px;
+    margin-top: 56px;
+  }
+  strong { color: var(--ink); }
+  code, .kbd {
+    font-family: inherit;
+    background: #eef1ef;
+    padding: 1px 6px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.95em;
+  }
+  @media print {
+    body { background: #fff; }
+    .page { max-width: 100%; padding: 12px 6px; }
+    figure { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+    h2 { break-after: avoid; }
+    table { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1>Kotoba Voice — Japanese × Korean 利用マニュアル</h1>
+  <p class="subtitle">日本語と韓国語を学ぶ学習者のためのアプリ利用ガイド</p>
+
+  <p>
+    このマニュアルは、実際にアプリを動かして撮影した画面（スクリーンショット）を使って、
+    Kotoba Voice（日本語×韓国語版）の使い方を説明します。
+  </p>
+
+  <h2 data-num="1">このアプリでできること</h2>
+  <p>
+    Kotoba Voice は、単に「これが正解の翻訳です」と1つだけ答えを出すアプリではありません。
+  </p>
+  <p>
+    このアプリの目的は、<strong>自然な日本語・韓国語の言い方を比べながら学ぶこと</strong>です。
+    同じ意味でも、場面や相手によって言い方は変わります。
+    そこでアプリは、1つの表現に対して次の3つのタイプの候補を出します。
+  </p>
+  <ul>
+    <li><strong>Close meaning</strong>（元の意味に近い言い方）</li>
+    <li><strong>Natural &amp; casual</strong>（自然でカジュアルな言い方）</li>
+    <li><strong>Different nuance</strong>（少しニュアンスが違う言い方）</li>
+  </ul>
+  <p>
+    学習者はこの3つを見比べることで、「同じことを言うにもいろいろな言い方がある」ということを実感できます。
+  </p>
+
+  <h2 data-num="2">基本的な使い方</h2>
+  <p>使い方はとてもシンプルです。</p>
+  <ol>
+    <li><strong>Input Language（入力言語）</strong> を選ぶ（日本語 または 한국어）</li>
+    <li><strong>Target Language（目標言語）</strong> を選ぶ（日本語 または 한국어）</li>
+    <li>言いたいフレーズを入力する</li>
+    <li>ボタンを押して、自然な言い方の候補を生成する</li>
+  </ol>
+  <p>
+    Input Language と Target Language が同じ場合（例：日本語→日本語）は、
+    翻訳ではなく、その文をそのまま発音練習するモードになります。
+  </p>
+  <figure>
+    <img src="images/01_explore_start.jpg" alt="Explore画面の初期状態">
+    <figcaption>Explore画面。上に Input Language（入力言語）と Target Language（目標言語）、下にフレーズ入力欄があります。</figcaption>
+  </figure>
+
+  <h2 data-num="3">Explore画面の見方</h2>
+  <p>Explore（探す）画面は、「自然にどう言えるか」を確認する画面です。</p>
+  <p>例として、日本語で</p>
+  <blockquote>就職活動してるんだ</blockquote>
+  <p>と入力し、Target Language を韓国語にして生成すると、次のように3つの候補が表示されます。</p>
+  <figure>
+    <img src="images/02_explore_ja_to_ko.jpg" alt="日本語から韓国語のExplore結果">
+    <figcaption>日本語→韓国語の例。3つの韓国語の候補が、それぞれ Literal Japanese（直訳的な日本語）と英語の説明つきで表示されます。</figcaption>
+  </figure>
+  <p>各候補カードには、次の情報があります。</p>
+  <ul>
+    <li><strong>カテゴリーラベル</strong>（Close meaning / Natural &amp; casual / Different nuance）</li>
+    <li><strong>目標言語の表現</strong>（大きな文字）</li>
+    <li><strong>Literal Japanese / Literal Korean</strong>（構造がわかる直訳）</li>
+    <li><strong>英語の説明</strong>（意味やニュアンス）</li>
+    <li><strong>Listen</strong>（音声を聞くボタン）</li>
+    <li><strong>Use this</strong>（この表現をPracticeで使うボタン）</li>
+  </ul>
+  <p>
+    <strong>Listen</strong> を押すと、その候補の発音をすぐに聞くことができます。
+    気に入った表現があれば、<strong>Use this</strong> を押しましょう。Practice（練習）画面に移動します。
+  </p>
+
+  <h2 data-num="4">Practice画面の見方</h2>
+  <p>Practice（練習）画面では、選んだ表現をより深く理解し、声に出す練習ができます。</p>
+  <p>先ほどの候補の中から</p>
+  <blockquote>요즘 취업하려고 노력 중이야（最近就職しようと努力している）</blockquote>
+  <p>を選んだ場合、Practice画面は次のようになります。</p>
+  <figure>
+    <img src="images/03_practice_ko_target.jpg" alt="Practice画面 韓国語ターゲット">
+    <figcaption>Practice画面の全体。上から順に、Your Expression、Literal Japanese、Word by Word、Meaning、Connotation、Context、Voice、Speaking、Play phrase、Compare other expressions が並んでいます。</figcaption>
+  </figure>
+  <table>
+    <tr><th>セクション</th><th>内容</th></tr>
+    <tr><td><strong>Your Expression</strong></td><td>選んだ表現（練習する文）</td></tr>
+    <tr><td><strong>Literal Japanese / Literal Korean</strong></td><td>構造が分かりやすい直訳</td></tr>
+    <tr><td><strong>Word by Word</strong></td><td>単語・チャンク単位の対応</td></tr>
+    <tr><td><strong>Meaning</strong></td><td>基本的な意味（英語）</td></tr>
+    <tr><td><strong>Connotation</strong></td><td>ニュアンス・気持ち・関係性など（英語）</td></tr>
+    <tr><td><strong>Context</strong></td><td>どんな場面で使うか（英語）</td></tr>
+    <tr><td><strong>Voice</strong></td><td>声の種類（Neutral / Masculine / Feminine）</td></tr>
+    <tr><td><strong>Speaking</strong></td><td>話す速さ（Natural / Slow）</td></tr>
+    <tr><td><strong>Play phrase</strong></td><td>表現全体を音声で再生</td></tr>
+    <tr><td><strong>Compare other expressions</strong></td><td>Exploreの候補一覧に戻る</td></tr>
+  </table>
+  <p>
+    <strong>Compare other expressions</strong> を押しても、Exploreで生成した候補は消えずに残っています。
+    気軽に他の候補と聞き比べることができます。
+  </p>
+
+  <h2 data-num="5">Literal Japanese / Literal Koreanとは何か</h2>
+  <p>
+    <strong>Literal Japanese</strong>（日本語のターゲット表現を選んだ場合は <strong>Literal Korean</strong>）は、
+    必ずしも一番自然な訳ではありません。
+  </p>
+  <p>これは、<strong>目標言語の表現がどんな構造になっているかを分かりやすくするための文</strong>です。</p>
+  <blockquote>요즘 취업하려고 노력 중이야<br>Literal Japanese: 最近就職しようと努力している</blockquote>
+  <p>
+    のように、韓国語の語順や構造に近い形で日本語が示されます。
+    少し硬い言い方に見えることもありますが、それは自然さより「構造の見やすさ」を優先しているためです。
+  </p>
+
+  <h2 data-num="6">Word by Wordとは何か</h2>
+  <p><strong>Word by Word</strong> は、日本語と韓国語の単語・意味のまとまり（チャンク）ごとの対応を2列で示す機能です。</p>
+  <table>
+    <tr><th>韓国語</th><th>日本語</th></tr>
+    <tr><td>요즘</td><td>最近</td></tr>
+    <tr><td>취업하려고</td><td>就職しようと</td></tr>
+    <tr><td>노력 중이야</td><td>努力している</td></tr>
+  </table>
+  <p>
+    日本語と韓国語は文の構造がとても似ている言語なので、この対応を見ると
+    「どの部分がどの意味に当たるか」が直感的に分かります。
+  </p>
+  <p>
+    一語ずつバラバラに分解するのではなく、意味のまとまり（チャンク）ごとに対応づけられているので、
+    実際の文の中でどう使われているかが理解しやすくなっています。
+  </p>
+
+  <h2 data-num="7">逆方向（韓国語→日本語）の例</h2>
+  <p>もちろん、韓国語から日本語に変換することもできます。韓国語で</p>
+  <blockquote>목숨만은 살려 주세요</blockquote>
+  <p>と入力し、Target Language を日本語にすると、次のように表示されます。</p>
+  <figure>
+    <img src="images/04_explore_ko_to_ja.jpg" alt="韓国語から日本語のExplore結果">
+    <figcaption>韓国語→日本語の例。日本語の候補には Literal Korean（構造が分かる韓国語）が添えられています。</figcaption>
+  </figure>
+  <p>ここで一番上の候補</p>
+  <blockquote>命だけは助けてください</blockquote>
+  <p>を選んで Use this を押すと、Practice画面は次のようになります。</p>
+  <figure>
+    <img src="images/05_practice_ja_target.jpg" alt="Practice画面 日本語ターゲット">
+    <figcaption>Practice画面（逆方向）。Literal Korean と Word by Word が、日本語の文と韓国語の文の対応を示しています。</figcaption>
+  </figure>
+  <p>このように、日本語⇄韓国語のどちらの方向でも、同じ仕組みでLiteral表示とWord by Wordが使えます。</p>
+
+  <h2 data-num="8">同じ言語同士の場合（発音練習モード）</h2>
+  <p>Input Language と Target Language を同じ言語にすると、翻訳や言い換えは行われません。</p>
+  <p>たとえば日本語→日本語で</p>
+  <blockquote>早く言ってくれない？</blockquote>
+  <p>と入力すると、そのままの文が保存され、Practice画面が表示されます。</p>
+  <figure>
+    <img src="images/06_practice_same_language.jpg" alt="同じ言語のPractice画面">
+    <figcaption>同一言語（日本語→日本語）の例。入力した文がそのまま表示され、Literal と Word by Word のセクションは表示されません。</figcaption>
+  </figure>
+  <p>このモードでは、次のことが起こります。</p>
+  <ul>
+    <li>入力した文が<strong>そのまま</strong>保存される（句読点や語尾も変わらない）</li>
+    <li><strong>Literal Japanese / Literal Korean は表示されない</strong></li>
+    <li><strong>Word by Word も表示されない</strong></li>
+    <li>Meaning / Connotation / Context は通常通り表示される</li>
+  </ul>
+  <p>これは、たとえば</p>
+  <blockquote>痛い？<br>痛くないの？<br>痛くないよね？</blockquote>
+  <p>のような、<strong>語尾やイントネーションのニュアンスの違い</strong>を練習したいときに便利です。</p>
+
+  <h2 data-num="9">Meaning / Connotation / Context の役割</h2>
+  <p>この3つは、いつも英語で表示されます。英語の説明があることで、意味やニュアンスをより正確に理解できます。</p>
+  <ul>
+    <li><strong>Meaning</strong> = 基本的な意味。その表現がシンプルに何を意味しているか。</li>
+    <li><strong>Connotation</strong> = ニュアンス、丁寧さ、気持ち、関係性など。カジュアルか丁寧か、直接的かやわらかいか、誰に対して使うか、どんな気持ちが込められているかなど。Casual・Direct・Polite のような短いバッジで要点が一目で分かるようになっています。</li>
+    <li><strong>Context</strong> = どういう場面で使うか。実際にどんな状況・関係性でその表現が使われるかの説明。</li>
+  </ul>
+  <p>この3つを読むことで、単なる「意味」だけでなく、<strong>「いつ・誰に・どんな気持ちで使うか」</strong>まで理解できます。</p>
+
+  <h2 data-num="10">音声の聞き方</h2>
+  <p>Kotoba Voice では、表現を実際の音声で聞くことができます。</p>
+  <ul>
+    <li><strong>Listen</strong>（Explore画面）— 各候補のすぐ横にあるボタン。その候補の発音をすぐに確認できます。</li>
+    <li><strong>Play phrase</strong>（Practice画面）— 選んだ表現をまとめて再生します。</li>
+  </ul>
+  <p>音声の設定は、Practice画面で調整できます。</p>
+  <ul>
+    <li><strong>Voice（声の種類）</strong> — Neutral（ニュートラル）／ Masculine（男性的な声）／ Feminine（女性的な声）</li>
+    <li><strong>Speaking（話す速さ）</strong> — Natural（自然な速さ）／ Slow（ゆっくり）</li>
+  </ul>
+  <p>Slow を選んでも、単語をぶつ切りにするような不自然な発音にはならず、できるだけ自然なリズムを保ったまま、ゆっくり話してくれます。</p>
+
+  <h2 data-num="11">使い方のコツ</h2>
+  <p>効果的に使うために、次のような順番がおすすめです。</p>
+  <ol>
+    <li><strong>まず意味をつかむ</strong> — Meaning を読んで、大まかな意味を理解する。</li>
+    <li><strong>Literal / Word by Word で構造を見る</strong> — 日本語と韓国語の文の構造がどう対応しているかを確認する。</li>
+    <li><strong>Connotation でニュアンスを見る</strong> — カジュアルか丁寧か、どんな気持ちが込められているかを確認する。</li>
+    <li><strong>音声を聞く</strong> — Listen や Play phrase で、実際の音とイントネーションを確認する。</li>
+    <li><strong>自分でも言ってみる</strong> — 聞いた音声をまねして、声に出して練習してみる。</li>
+    <li><strong>3つの候補の違いを比べる</strong> — Close meaning・Natural &amp; casual・Different nuance を聞き比べて、ニュアンスの違いを体感する。</li>
+  </ol>
+
+  <h2 data-num="12">注意点</h2>
+  <ul>
+    <li>アプリが出す候補は、<strong>自然でよく使われる言い方の一例</strong>であり、「これだけが唯一の正解」というわけではありません。</li>
+    <li>言葉づかいは、<strong>場面・相手との関係・年齢差などによって変わります</strong>。同じ意味でも、状況によってふさわしい表現は変わります。</li>
+    <li>このアプリは、<strong>丸暗記するためのものではなく、比べて考えるためのもの</strong>です。複数の候補やニュアンスの違いを見ながら、「どうしてこの言い方が選ばれているのか」を考えることが、言語学習にとって一番大切です。</li>
+  </ul>
+
+  <div class="summary-box">
+    <h2 data-num="　">短いまとめ</h2>
+    <ul>
+      <li>Kotoba Voice は、日本語⇄韓国語の<strong>自然な言い方を比べるためのアプリ</strong>です。</li>
+      <li>Explore で候補を探し、Practice でじっくり練習します。</li>
+      <li>Literal は「構造を見るためのヒント」、Word by Word は「単語の対応」を示します。</li>
+      <li>Meaning / Connotation / Context を読むことで、意味だけでなく気持ちや場面も理解できます。</li>
+      <li>音声を聞いて、実際に声に出して練習してみましょう。</li>
+    </ul>
+    <p style="margin-bottom:0;">楽しく、自然な日本語と韓国語を身につけていきましょう。</p>
+  </div>
+
+  <p class="footer-note">Kotoba Voice — Japanese × Korean ／ Hitoshi Eguchi・Hokusei Gakuen University</p>
+
+</div>
+</body>
+</html>

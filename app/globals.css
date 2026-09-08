@@ -57,7 +57,10 @@ header {
 
 h1 { margin: 0; font-size: 25px; letter-spacing: -.5px; }
 header p { margin: 3px 0 0; color: var(--muted); font-size: 14px; }
-.stage-indicator { display: flex; align-items: center; gap: 8px; margin-left: auto; color: #9aa4a8; font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+.header-actions { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 7px; }
+.manual-link { color: #8b969b; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .01em; }
+.manual-link:hover { color: var(--teal); text-decoration: underline; }
+.stage-indicator { display: flex; align-items: center; gap: 8px; color: #9aa4a8; font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
 .stage-indicator i { width: 24px; height: 1px; background: #cfd8d9; }
 .stage-indicator span.current { color: var(--teal); }
 .stage-indicator span.done { color: #72918f; }
@@ -164,7 +167,8 @@ fieldset { min-width: 0; margin: 22px 0 0; padding: 0; border: 0; }
 
 @media (max-width: 650px) {
   main { padding: 22px 13px; place-items: flex-start center; }
-  header { margin-bottom: 17px; }
+  header { margin-bottom: 17px; flex-wrap: wrap; }
+  .header-actions { margin-left: 0; width: 100%; justify-content: flex-end; }
   .stage-indicator { display: none; }
   .card { padding: 22px 17px; border-radius: 22px; }
   .section-title { margin-bottom: 20px; }

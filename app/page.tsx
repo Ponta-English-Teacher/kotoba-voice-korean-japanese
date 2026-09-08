@@ -252,10 +252,13 @@ export default function Home() {
             <h1>Kotoba Voice</h1>
             <p>Japanese × Korean · Find the words. Make them yours.</p>
           </div>
-          <div className="stage-indicator" aria-label={`Stage: ${stage}`}>
-            <span className={stage === "explore" ? "current" : "done"}>1 Explore</span>
-            <i />
-            <span className={stage === "practice" ? "current" : ""}>2 Practice</span>
+          <div className="header-actions">
+            <a className="manual-link" href="/manual/" target="_blank" rel="noopener noreferrer">使い方 / User Manual</a>
+            <div className="stage-indicator" aria-label={`Stage: ${stage}`}>
+              <span className={stage === "explore" ? "current" : "done"}>1 Explore</span>
+              <i />
+              <span className={stage === "practice" ? "current" : ""}>2 Practice</span>
+            </div>
           </div>
         </header>
 
