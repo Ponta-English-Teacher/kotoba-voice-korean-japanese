@@ -145,12 +145,19 @@ fieldset { min-width: 0; margin: 22px 0 0; padding: 0; border: 0; }
 .support-label { display: block; margin-bottom: 9px; font-size: 11px; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
 .support-meaning .support-label { color: var(--teal); }
 .support-nuance .support-label, .support-context .support-label { color: #506165; }
+.support-literal .support-label, .support-word-mapping .support-label { color: #7c9391; }
 .support-text { margin: 0; font-family: inherit; font-size: clamp(18px, 2.4vw, 21px); line-height: 1.6; color: var(--ink); }
 .support-meaning-text { font-weight: 440; }
+.support-literal-text { font-size: clamp(20px, 2.8vw, 23px); font-weight: 620; color: #2f3d43; }
 .nuance-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 11px; }
 .nuance-tag { display: inline-block; padding: 5px 12px; border-radius: 999px; background: #eef5f3; color: var(--teal); font-size: 13px; font-weight: 800; letter-spacing: .02em; }
 .support-nuance-text { font-weight: 480; }
 .support-context-text { font-weight: 420; }
+.word-mapping-list { display: grid; gap: 8px; }
+.word-mapping-row { display: grid; grid-template-columns: minmax(64px, max-content) 1fr; gap: 16px; align-items: baseline; padding-bottom: 7px; border-bottom: 1px solid #e7ece9; }
+.word-mapping-row:last-child { border-bottom: 0; padding-bottom: 0; }
+.word-mapping-target { font-weight: 700; font-size: 17px; color: var(--ink); }
+.word-mapping-equivalent { font-weight: 460; font-size: 16px; color: #5b6a6e; }
 .practice-options { margin-top: 5px; }
 .compare-button { display: block; margin: 17px auto 0; padding: 8px 12px; color: var(--teal); background: transparent; border: 0; cursor: pointer; font-size: 14px; font-weight: 750; }
 .compare-button:hover { text-decoration: underline; }

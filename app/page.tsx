@@ -7,6 +7,10 @@ type VoiceStyle = "neutral" | "masculine" | "feminine";
 type Pace = "natural" | "slow";
 type Stage = "explore" | "practice";
 type Status = "idle" | "loading" | "playing" | "error";
+type WordMappingPair = {
+  target: string;
+  equivalent: string;
+};
 type Alternative = {
   role: "close" | "natural" | "nuanced";
   expression: string;
@@ -15,6 +19,7 @@ type Alternative = {
   nuance: string;
   context: string;
   literal_translation: string;
+  word_mapping: WordMappingPair[];
 };
 
 const roleLabels: Record<Alternative["role"], string> = {
@@ -53,6 +58,14 @@ function extractNuanceTags(...texts: string[]): string[] {
   return [...new Set(tags)];
 }
 
+function otherLanguage(language: Language): Language {
+  return language === "ja" ? "ko" : "ja";
+}
+
+function literalLabelFor(language: Language): string {
+  return language === "ja" ? "Literal Japanese" : "Literal Korean";
+}
+
 function Choice<T extends string>({ value, current, onSelect, children }: {
   value: T;
   current: T;
@@ -76,6 +89,8 @@ export default function Home() {
   const [practiceMeaning, setPracticeMeaning] = useState("");
   const [practiceNuance, setPracticeNuance] = useState("");
   const [practiceContext, setPracticeContext] = useState("");
+  const [practiceLiteral, setPracticeLiteral] = useState("");
+  const [practiceWordMapping, setPracticeWordMapping] = useState<WordMappingPair[]>([]);
   const [voiceStyle, setVoiceStyle] = useState<VoiceStyle>("neutral");
   const [pace, setPace] = useState<Pace>("natural");
   const [status, setStatus] = useState<Status>("idle");
@@ -87,8 +102,10 @@ export default function Home() {
 
   const isSameLanguage = inputLanguage === targetLanguage;
   const targetName = targetLanguage === "ja" ? "Japanese" : "Korean";
-  const literalLanguage: Language = alternativesLanguage === "ja" ? "ko" : "ja";
-  const literalLabel = literalLanguage === "ja" ? "Literal Japanese" : "Literal Korean";
+  const literalLanguage = otherLanguage(alternativesLanguage);
+  const literalLabel = literalLabelFor(literalLanguage);
+  const practiceLiteralLanguage = otherLanguage(targetLanguage);
+  const practiceLiteralLabel = literalLabelFor(practiceLiteralLanguage);
 
   useEffect(() => () => {
     audioRef.current?.pause();
@@ -159,6 +176,8 @@ export default function Home() {
         setPracticeMeaning(result.meaning);
         setPracticeNuance(result.nuance);
         setPracticeContext(result.situation);
+        setPracticeLiteral("");
+        setPracticeWordMapping([]);
         setStage("practice");
       } else {
         if (result.same_language) throw new Error("The input already appears to be in the selected target language.");
@@ -191,6 +210,8 @@ export default function Home() {
     setPracticeMeaning(alternative.natural_meaning);
     setPracticeNuance(alternative.nuance);
     setPracticeContext(alternative.context);
+    setPracticeLiteral(alternative.literal_translation);
+    setPracticeWordMapping(alternative.word_mapping);
     setError("");
     setStage("practice");
   }
@@ -337,6 +358,27 @@ export default function Home() {
               <p className="practice-phrase" lang={targetLanguage}>{phrase}</p>
 
               <div className="practice-support">
+                {practiceLiteral && (
+                  <div className="support-block support-literal">
+                    <span className="support-label">{practiceLiteralLabel}</span>
+                    <p className="support-text support-literal-text" lang={practiceLiteralLanguage}>{practiceLiteral}</p>
+                  </div>
+                )}
+
+                {practiceWordMapping.length > 0 && (
+                  <div className="support-block support-word-mapping">
+                    <span className="support-label">Word by word</span>
+                    <div className="word-mapping-list">
+                      {practiceWordMapping.map((pair, index) => (
+                        <div className="word-mapping-row" key={index}>
+                          <span className="word-mapping-target" lang={targetLanguage}>{pair.target}</span>
+                          <span className="word-mapping-equivalent" lang={practiceLiteralLanguage}>{pair.equivalent}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {practiceMeaning && (
                   <div className="support-block support-meaning">
                     <span className="support-label">Meaning</span>
