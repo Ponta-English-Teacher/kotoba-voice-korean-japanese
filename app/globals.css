@@ -154,13 +154,14 @@ fieldset { min-width: 0; margin: 22px 0 0; padding: 0; border: 0; }
 .support-literal-text { font-size: clamp(20px, 2.8vw, 23px); font-weight: 620; color: #2f3d43; }
 .nuance-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 11px; }
 .nuance-tag { display: inline-block; padding: 5px 12px; border-radius: 999px; background: #eef5f3; color: var(--teal); font-size: 13px; font-weight: 800; letter-spacing: .02em; }
+.support-nuance-note-ja { margin: 0 0 10px; padding: 8px 12px; border-left: 2px solid #d7e0dd; background: #f6f8f7; border-radius: 0 8px 8px 0; color: #6b7a7d; font-size: 13.5px; font-style: italic; line-height: 1.55; }
 .support-nuance-text { font-weight: 480; }
 .support-context-text { font-weight: 420; }
 .word-mapping-list { display: grid; gap: 8px; }
 .word-mapping-row { display: grid; grid-template-columns: minmax(64px, max-content) 1fr; gap: 16px; align-items: baseline; padding-bottom: 7px; border-bottom: 1px solid #e7ece9; }
 .word-mapping-row:last-child { border-bottom: 0; padding-bottom: 0; }
-.word-mapping-target { font-weight: 700; font-size: 17px; color: var(--ink); }
-.word-mapping-equivalent { font-weight: 460; font-size: 16px; color: #5b6a6e; }
+.word-mapping-target { font-weight: 700; font-size: 17px; color: var(--ink); overflow-wrap: break-word; }
+.word-mapping-equivalent { font-weight: 460; font-size: 16px; color: #5b6a6e; overflow-wrap: break-word; }
 .practice-options { margin-top: 5px; }
 .compare-button { display: block; margin: 17px auto 0; padding: 8px 12px; color: var(--teal); background: transparent; border: 0; cursor: pointer; font-size: 14px; font-weight: 750; }
 .compare-button:hover { text-decoration: underline; }
@@ -186,6 +187,9 @@ fieldset { min-width: 0; margin: 22px 0 0; padding: 0; border: 0; }
   .alternative-actions { grid-template-columns: 1fr 1fr; }
   .practice-card { padding: 22px 17px; }
   .practice-phrase-wrap { padding: 22px 18px; }
+  .word-mapping-row { grid-template-columns: minmax(56px, 40%) 1fr; gap: 10px; }
+  .word-mapping-target { font-size: 16px; }
+  .word-mapping-equivalent { font-size: 15px; }
 }
 
 @media (min-width: 651px) and (max-width: 960px) {

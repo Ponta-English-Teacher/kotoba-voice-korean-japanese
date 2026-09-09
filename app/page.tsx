@@ -20,6 +20,7 @@ type Alternative = {
   context: string;
   literal_translation: string;
   word_mapping: WordMappingPair[];
+  nuance_note_ja: string;
 };
 
 const roleLabels: Record<Alternative["role"], string> = {
@@ -91,6 +92,7 @@ export default function Home() {
   const [practiceContext, setPracticeContext] = useState("");
   const [practiceLiteral, setPracticeLiteral] = useState("");
   const [practiceWordMapping, setPracticeWordMapping] = useState<WordMappingPair[]>([]);
+  const [practiceNuanceNoteJa, setPracticeNuanceNoteJa] = useState("");
   const [voiceStyle, setVoiceStyle] = useState<VoiceStyle>("neutral");
   const [pace, setPace] = useState<Pace>("natural");
   const [status, setStatus] = useState<Status>("idle");
@@ -176,8 +178,9 @@ export default function Home() {
         setPracticeMeaning(result.meaning);
         setPracticeNuance(result.nuance);
         setPracticeContext(result.situation);
-        setPracticeLiteral("");
-        setPracticeWordMapping([]);
+        setPracticeLiteral(result.literal_translation || "");
+        setPracticeWordMapping(result.word_mapping || []);
+        setPracticeNuanceNoteJa(result.nuance_note_ja || "");
         setStage("practice");
       } else {
         if (result.same_language) throw new Error("The input already appears to be in the selected target language.");
@@ -212,6 +215,7 @@ export default function Home() {
     setPracticeContext(alternative.context);
     setPracticeLiteral(alternative.literal_translation);
     setPracticeWordMapping(alternative.word_mapping);
+    setPracticeNuanceNoteJa(alternative.nuance_note_ja || "");
     setError("");
     setStage("practice");
   }
@@ -396,6 +400,9 @@ export default function Home() {
                       <div className="nuance-tags">
                         {nuanceTags.map((tag) => <span className="nuance-tag" key={tag}>{tag}</span>)}
                       </div>
+                    )}
+                    {practiceNuanceNoteJa && (
+                      <p className="support-nuance-note-ja" lang="ja">{practiceNuanceNoteJa}</p>
                     )}
                     {practiceNuance && <p className="support-text support-nuance-text">{practiceNuance}</p>}
                   </div>
